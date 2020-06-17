@@ -1,14 +1,24 @@
 import React, {useContext} from "react";
-import {LottoStoreContext} from "../../Store/LottoStore";
+import "./Main.scss";
+import {observer} from "mobx-react";
+import {useStore} from "../../Store/store";
+import BoardSwitcher from "../BoardSwitcher/BoardSwitcher";
+import Info from "../Info/Info";
+import MainBoard from "../MainBoard/MainBoard";
+import BottomBar from "../BottomBar/BottomBar";
 
-const Main = ()=> {
-    const lotto = useContext(LottoStoreContext)
-    console.log(lotto)
+const Main = observer(()=> {
+    // const { lottoStore } = useStore();
     return (
-        <div className=".main-layout">
-            testa
+        <div className="main-layout">
+            <div className="main-ui">
+                <Info />
+                <BoardSwitcher />
+                <MainBoard />
+                <BottomBar />
+            </div>
         </div>
     );
-}
+})
 
 export default Main;

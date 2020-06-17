@@ -1,0 +1,31 @@
+.main-layout{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-ui {
+  margin: 0 auto;
+  max-height: 500px;
+  height: 500px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  >:nth-child(1) {
+    flex: 1;
+  }
+  >:nth-child(2) {
+    flex: 1;
+    margin: 0 3%;
+  }
+  >:nth-child(3) {
+    flex: 10;
+    margin: 0 3%;
+  }
+  >:nth-child(4) {
+    flex: 2;
+    margin: 0 3%;
+  }
+}
