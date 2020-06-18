@@ -17,3 +17,7 @@
   color: var(--color-text-primary);
   cursor: default;
 }
+
+.isSelected {
+  background-color: var(--color-btn-secondary);
+}

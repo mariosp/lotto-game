@@ -1,5 +1,6 @@
 import {action, computed, observable} from "mobx";
 import {NOT_TOUCHED, NOT_VALID, VALID} from "../Shared/types/board-status";
+import {NUMBERS_PER_BOARD} from "../Shared/app-constants";
 
 export class LottoStore {
     // @observable boards = 0;
@@ -44,6 +45,26 @@ export class LottoStore {
 
     get gamesStatus() {
         return this._gamesStatus[this.selectedTab];
+    }
+
+    @action
+    addNumberToGame(value) {
+        if(value> 0 && value <= NUMBERS_PER_BOARD ) {
+            this._gamesStatus[this._selectedTab] = VALID;
+            this._games[this._selectedTab].push(value);
+        }
+    }
+
+    @action
+    removeNumberFromGame(value) {
+         const index = this._games[this._selectedTab].findIndex(element => element === value);
+         this._games[this._selectedTab].splice(index, 1);
+    }
+
+    isNumberSelected(value) {
+        const found = this._games[this._selectedTab].find(element => element === value);
+        console.log(found)
+        return !!found;
     }
 
 }

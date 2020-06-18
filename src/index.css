@@ -23,4 +23,6 @@ html, body, #root{
 :root {
   --color-text-primary: #FFFF;
   --color-text-secondary: #FFFF;
+  --color-btn-primary: #FFFF;
+  --color-btn-secondary: rgb(236, 93, 42);
 }

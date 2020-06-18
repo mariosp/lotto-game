@@ -8,7 +8,6 @@ import MainBoard from "../MainBoard/MainBoard";
 import BottomBar from "../BottomBar/BottomBar";
 
 const Main = observer(()=> {
-    // const { lottoStore } = useStore();
     return (
         <div className="main-layout">
             <div className="main-ui">
