@@ -39,6 +39,7 @@ export class LottoStore {
     @action
     addGame() {
         this._games.push([]);
+        this._gamesStatus.push(NOT_TOUCHED);
     }
 
     get gamesStatus() {

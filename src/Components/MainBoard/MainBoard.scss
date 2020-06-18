@@ -1,4 +1,8 @@
 .mainboard-wrapper {
   background-color: rgb(38, 38, 38);
   flex:1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
