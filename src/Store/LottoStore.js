@@ -44,10 +44,12 @@ export class LottoStore {
 
     set selectedSystem(value) {
         this._selectedSystem[this.selectedTab] = value;
+        this.checkValidation();
     }
 
     @action
     addGame() {
+        this._selectedTab = this._games.length;
         this._games.push([]);
         this._gamesStatus.push(NOT_TOUCHED);
         this._selectedSystem.push(DEFAULT_SYSTEM_NUMBER);
@@ -60,8 +62,8 @@ export class LottoStore {
     @action
     addNumberToGame(value) {
         if(value> 0 && value <= NUMBERS_PER_BOARD ) {
-            this._gamesStatus[this._selectedTab] = VALID;
             this._games[this._selectedTab].push(value);
+            this.checkValidation();
         }
     }
 
@@ -69,6 +71,7 @@ export class LottoStore {
     removeNumberFromGame(value) {
          const index = this._games[this._selectedTab].findIndex(element => element === value);
          this._games[this._selectedTab].splice(index, 1);
+         this.checkValidation();
     }
 
     @action
@@ -79,9 +82,9 @@ export class LottoStore {
 
     @action
     clearBoard() {
-        this._games[this.selectedTab] = []
-        this._gamesStatus[this.selectedTab] = NOT_TOUCHED;
-        this.selectedSystem = DEFAULT_SYSTEM_NUMBER;
+        this._games[this._selectedTab] = []
+        this._gamesStatus[this._selectedTab] = NOT_TOUCHED;
+        this._selectedSystem[this._selectedTab] = DEFAULT_SYSTEM_NUMBER;
     }
 
     @action
@@ -90,5 +93,15 @@ export class LottoStore {
         this._gamesStatus = this._gamesStatus.map(()=> NOT_TOUCHED);
         this._selectedSystem = this._selectedSystem.map(()=> DEFAULT_SYSTEM_NUMBER );
     }
+
+    @action
+    checkValidation() {
+       return this._gamesStatus[this._selectedTab] = this._games[this._selectedTab].length === this.selectedSystem ?
+            VALID
+            :
+            NOT_VALID;
+    }
+
+
 
 }
