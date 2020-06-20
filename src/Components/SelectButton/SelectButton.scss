@@ -1,4 +1,5 @@
 .select-btn {
+  border: 0;
   height: 45px;
   width: 50px;
   display: flex;
@@ -13,11 +14,15 @@
     background-color: var(--color-btn-secondary);
   }
   &:hover {
-    filter: brightness(150%);;
+    filter: brightness(150%);
+  }
+  &:focus {
+    outline: 0;
   }
 }
 
 .select-clear {
+  background-color: transparent;
   cursor: pointer;
   margin-left: 10px;
   height: 60%;
@@ -35,10 +40,14 @@
   &:active {
     background-color: var(--color-btn-secondary);
   }
+  &:focus {
+    outline: 0;
+  }
 }
 
 
 .select-clear-all {
+  background-color: transparent;
   cursor: pointer;
   //margin-left: 10px;
   height: 80%;
@@ -55,5 +64,35 @@
   }
   &:active {
     background-color: var(--color-btn-secondary);
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.select-play-all {
+  border: 0;
+  cursor: pointer;
+  //margin-left: 10px;
+  background-color: var(--color-btn-tertiary);
+  height: 60%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-primary);
+  padding: 0 8%;
+  border-radius: 5px;
+  &:hover {
+    filter: brightness(120%);
+  }
+  &:active {
+    background-color: var(--color-btn-secondary);
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:disabled {
+    filter: brightness(50%);
   }
 }

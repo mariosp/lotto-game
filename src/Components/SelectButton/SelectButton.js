@@ -1,11 +1,15 @@
 import React from "react";
 import "./SelectButton.scss";
 
-const SelectButton = ({children, onClick, cssClassName}) => {
+const SelectButton = ({children, onClick, cssClassName, disabled = false}) => {
     return (
-        <div className={cssClassName} onClick={onClick}>
+        <button
+            className={cssClassName}
+            onClick={onClick}
+            disabled={disabled}
+        >
             {children}
-        </div>
+        </button>
     );
 }
 

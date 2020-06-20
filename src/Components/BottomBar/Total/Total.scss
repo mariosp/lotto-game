@@ -1,0 +1,23 @@
+.total-wrapper {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cost {
+  margin-right: 10px;
+}
+
+.sub-total {
+  text-align: right;
+  color: var(--color-text-primary);
+  font-size: 12px;
+}
+
+.total {
+  text-align: right;
+  color: var(--color-btn-tertiary);
+  font-size: 16px;
+}

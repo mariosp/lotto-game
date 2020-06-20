@@ -8,7 +8,7 @@ import { IoIosInformationCircleOutline} from "react-icons/all";
 
 const Info = () => {
     const { lottoStore } = useStore();
-        console.log("ONFO")
+
     const printInfoMessage = () => {
             console.log(lottoStore.gamesStatus)
         if(lottoStore.gamesStatus === NOT_TOUCHED) {

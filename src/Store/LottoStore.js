@@ -55,6 +55,7 @@ export class LottoStore {
         this._selectedSystem.push(DEFAULT_SYSTEM_NUMBER);
     }
 
+
     get gamesStatus() {
         return this._gamesStatus[this.selectedTab];
     }
