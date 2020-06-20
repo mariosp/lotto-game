@@ -1,12 +1,13 @@
 import {action, computed, observable} from "mobx";
 import {NOT_TOUCHED, NOT_VALID, VALID} from "../Shared/types/board-status";
-import {NUMBERS_PER_BOARD} from "../Shared/app-constants";
+import {DEFAULT_SYSTEM_NUMBER, NUMBERS_PER_BOARD} from "../Shared/app-constants";
 
 export class LottoStore {
     // @observable boards = 0;
     @observable _games = [];
     @observable _gamesStatus = [];
     @observable _selectedTab;
+    @observable _selectedSystem = [];
 
     constructor() {
         this.init();
@@ -18,6 +19,7 @@ export class LottoStore {
         for(let i=0; i< this.boards; i++){
             this._games.push([]);
         }
+        this._selectedSystem = new Array(3).fill(DEFAULT_SYSTEM_NUMBER);
     }
 
     get selectedTab() {
@@ -37,10 +39,19 @@ export class LottoStore {
         this._games = value;
     }
 
+    get selectedSystem() {
+        return this._selectedSystem[this.selectedTab];
+    }
+
+    set selectedSystem(value) {
+        this._selectedSystem[this.selectedTab] = value;
+    }
+
     @action
     addGame() {
         this._games.push([]);
         this._gamesStatus.push(NOT_TOUCHED);
+        this._selectedSystem.push(DEFAULT_SYSTEM_NUMBER);
     }
 
     get gamesStatus() {
@@ -63,7 +74,6 @@ export class LottoStore {
 
     isNumberSelected(value) {
         const found = this._games[this._selectedTab].find(element => element === value);
-        console.log(found)
         return !!found;
     }
 

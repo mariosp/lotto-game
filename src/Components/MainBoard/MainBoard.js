@@ -4,6 +4,7 @@ import { NUMBERS_PER_BOARD } from "../../Shared/app-constants";
 import LottoNumber from "./LottoNumber/LottonNumber";
 import {observer} from "mobx-react";
 import {useStore} from "../../Store/store";
+import SystemSelect from "./SystemSelect/SystemSelect";
 
 const MainBoard = observer(() => {
     const { lottoStore } = useStore();
@@ -18,6 +19,7 @@ const MainBoard = observer(() => {
     return (
         <div className="mainboard-wrapper">
             {renderNumberBtns()}
+        <SystemSelect />
         </div>
     )
 })

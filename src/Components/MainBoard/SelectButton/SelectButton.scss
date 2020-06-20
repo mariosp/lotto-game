@@ -1,0 +1,15 @@
+.select-btn {
+  height: 45px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-primary);
+  background-color: var(--color-btn-primary);
+  margin-right: 2px;
+  cursor: pointer;
+
+  &.selectedBtn {
+    background-color: var(--color-btn-secondary);
+  }
+}
