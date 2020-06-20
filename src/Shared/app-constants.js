@@ -5,3 +5,6 @@ export const DEFAULT_SYSTEM_NUMBER = 6;
 //LOTTO SYSTEM CONSTANTS
 export const MIN_SYSTEM_NUMBER = 6;
 export const MAX_SYSTEM_NUMBER = 9;
+
+export const BTN_SELECT_CLR = "CLR";
+export const BTN_SELECT_CLR_ALL = "CLR ALL";

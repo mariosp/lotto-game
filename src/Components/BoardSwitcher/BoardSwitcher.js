@@ -1,30 +1,26 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./BoardSwitcher.scss";
+import Tabs from "./Tabs/Tabs";
+import {BTN_SELECT_CLR_ALL} from "../../Shared/app-constants";
+import SelectButton from "../SelectButton/SelectButton";
 import {useStore} from "../../Store/store";
-import Tab from "./Tab/Tab";
-import {observer} from "mobx-react";
 
-const BoardSwitcher = observer(() => {
+const BoardSwitcher = () => {
     const { lottoStore } = useStore();
-    console.log(lottoStore);
-
-    const renderTabs = () => {
-        return lottoStore.games.map((game, index) => <Tab key={index} index={index} /> );
+    const handleClickClearAll = () => {
+        lottoStore.clearAllBoard();
     }
-
-    const addTab = lottoStore.games.length < 6 && <Tab addTab />;
 
     return(
         <div className="boardswitcher-wrapper">
-            <div className="tabs">
-                {renderTabs()}
-                {addTab}
-            </div>
-            <div className="clear-btn">
-
+            <Tabs />
+            <div className="boards-options">
+                <SelectButton cssClassName={"select-clear-all"} onClick={handleClickClearAll}>
+                    {BTN_SELECT_CLR_ALL}
+                </SelectButton>
             </div>
         </div>
     )
-})
+}
 
 export default BoardSwitcher;

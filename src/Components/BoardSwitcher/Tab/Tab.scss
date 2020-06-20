@@ -7,12 +7,18 @@
   align-items: center;
   color: var(--color-text-primary);
   cursor: pointer;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  &:hover {
+    background-color: var(--color-btn-primary);
+  }
 }
 
 .is-active {
-  background-color: rgb(38, 38, 38);
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
+  background-color: var(--color-bg);
+  &:hover {
+    background-color: var(--color-bg);
+  }
 }
 
 .board-status-wrapper {

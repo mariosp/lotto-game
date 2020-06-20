@@ -1,9 +1,8 @@
-import {action, computed, observable} from "mobx";
+import {action, observable} from "mobx";
 import {NOT_TOUCHED, NOT_VALID, VALID} from "../Shared/types/board-status";
 import {DEFAULT_SYSTEM_NUMBER, NUMBERS_PER_BOARD} from "../Shared/app-constants";
 
 export class LottoStore {
-    // @observable boards = 0;
     @observable _games = [];
     @observable _gamesStatus = [];
     @observable _selectedTab;
@@ -72,9 +71,24 @@ export class LottoStore {
          this._games[this._selectedTab].splice(index, 1);
     }
 
+    @action
     isNumberSelected(value) {
         const found = this._games[this._selectedTab].find(element => element === value);
         return !!found;
+    }
+
+    @action
+    clearBoard() {
+        this._games[this.selectedTab] = []
+        this._gamesStatus[this.selectedTab] = NOT_TOUCHED;
+        this.selectedSystem = DEFAULT_SYSTEM_NUMBER;
+    }
+
+    @action
+    clearAllBoard() {
+        this._games = this.games.map(()=> [])
+        this._gamesStatus = this._gamesStatus.map(()=> NOT_TOUCHED);
+        this._selectedSystem = this._selectedSystem.map(()=> DEFAULT_SYSTEM_NUMBER );
     }
 
 }

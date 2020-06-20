@@ -25,4 +25,5 @@ html, body, #root{
   --color-text-secondary: #FFFF;
   --color-btn-primary: #4d4d4d;;
   --color-btn-secondary: rgb(236, 93, 42);
+  --color-bg: #262626;
 }

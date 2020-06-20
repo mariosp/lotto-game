@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./MainBoard.scss"
 import { NUMBERS_PER_BOARD } from "../../Shared/app-constants";
 import LottoNumber from "./LottoNumber/LottonNumber";
@@ -15,6 +15,8 @@ const MainBoard = observer(() => {
         }
         return lnumbers;
     }
+
+    console.log("RENDER")
 
     return (
         <div className="mainboard-wrapper">

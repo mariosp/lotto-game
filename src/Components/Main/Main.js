@@ -1,7 +1,6 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Main.scss";
 import {observer} from "mobx-react";
-import {useStore} from "../../Store/store";
 import BoardSwitcher from "../BoardSwitcher/BoardSwitcher";
 import Info from "../Info/Info";
 import MainBoard from "../MainBoard/MainBoard";

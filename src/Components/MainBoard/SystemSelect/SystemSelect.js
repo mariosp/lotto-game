@@ -2,7 +2,7 @@ import React from "react";
 import "./SystemSelect.scss";
 import {observer} from "mobx-react";
 import {MAX_SYSTEM_NUMBER, MIN_SYSTEM_NUMBER, SYSTEM_LABEL} from "../../../Shared/app-constants";
-import SelectButton from "../SelectButton/SelectButton";
+import SelectButton from "../../SelectButton/SelectButton";
 import {useStore} from "../../../Store/store";
 
 const SystemSelect = observer(() => {

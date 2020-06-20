@@ -16,6 +16,9 @@
   align-items: center;
   color: var(--color-text-primary);
   cursor: pointer;
+  &:hover {
+    filter: brightness(150%);;
+  }
 }
 
 .isSelected {

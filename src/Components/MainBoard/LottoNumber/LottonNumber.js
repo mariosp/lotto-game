@@ -3,9 +3,14 @@ import "./LottoNumber.scss";
 import {useStore} from "../../../Store/store";
 import {observer} from "mobx-react";
 
-const LottoNumber = ({value}) => {
+const LottoNumber = observer(({value}) => {
     const { lottoStore } = useStore();
-    const [selected, setSelected] = useState(lottoStore.isNumberSelected(value));
+    const selectedGame = lottoStore.games[lottoStore.selectedTab];
+    const [selected, setSelected] = useState(false);
+
+    useEffect(()=> {
+        setSelected(lottoStore.isNumberSelected(value))
+    }, [selectedGame, lottoStore, value])
 
     const handleLottoNumberClick = () => {
         if(selected) {
@@ -24,6 +29,6 @@ const LottoNumber = ({value}) => {
             </div>
         </div>
     );
-}
+})
 
 export default LottoNumber;
