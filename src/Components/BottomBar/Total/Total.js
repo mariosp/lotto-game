@@ -5,7 +5,6 @@ import {useStore} from "../../../Store/store";
 import SelectButton from "../../SelectButton/SelectButton";
 import {
     BTN_SELECT_PLAY_ALL,
-    DEFAULT_SYSTEM_NUMBER,
     SUB_TOTAL_MSG,
     TOTAL_MSG,
     VALID_NUMBER
@@ -41,7 +40,6 @@ const Total = () => {
     }, [lottoStore.gamesStatus, lottoStore._selectedTab])
 
     const handleClickPlayAll = () => {
-        console.log("PLAY ALL")
     }
 
     const checkIfAllBoardsAreValid = () => {
