@@ -1,4 +1,4 @@
-import {action, observable} from "mobx";
+import {action, observable } from "mobx";
 import {NOT_TOUCHED, NOT_VALID, VALID} from "../Shared/types/board-status";
 import {DEFAULT_SYSTEM_NUMBER, NUMBERS_PER_BOARD} from "../Shared/app-constants";
 
@@ -69,6 +69,12 @@ export class LottoStore {
     }
 
     @action
+    addNumbersToGame(value, tab) {
+        this._games[tab]= value;
+        this.checkValidation(tab);
+    }
+
+    @action
     removeNumberFromGame(value) {
          const index = this._games[this._selectedTab].findIndex(element => element === value);
          this._games[this._selectedTab].splice(index, 1);
@@ -96,13 +102,10 @@ export class LottoStore {
     }
 
     @action
-    checkValidation() {
-       return this._gamesStatus[this._selectedTab] = this._games[this._selectedTab].length === this.selectedSystem ?
+    checkValidation(tab) {
+       return this._gamesStatus[tab || this._selectedTab] = this._games[tab || this._selectedTab].length === this.selectedSystem ?
             VALID
             :
             NOT_VALID;
     }
-
-
-
 }

@@ -10,7 +10,6 @@ const Info = () => {
     const { lottoStore } = useStore();
 
     const printInfoMessage = () => {
-            console.log(lottoStore.gamesStatus)
         if(lottoStore.gamesStatus === NOT_TOUCHED) {
             return INFO_NOT_TOUCHED;
         } else if (lottoStore.gamesStatus === VALID) {

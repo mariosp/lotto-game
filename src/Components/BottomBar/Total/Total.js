@@ -25,19 +25,19 @@ const Total = () => {
         } else {
             setSubTotal(defaultPrice);
         }
-    }, [lottoStore.gamesStatus, lottoStore._selectedTab])
+    }, [lottoStore.gamesStatus, lottoStore._selectedTab,defaultPrice,lottoStore.games])
 
     useEffect(()=> {
         let price = 0.00;
         if(checkIfAllBoardsAreValid()){
-            lottoStore._games.map((game)=> {
+            lottoStore._games.forEach((game) => {
                 price += calculateColumns(game, VALID_NUMBER).length
             })
             setTotal(price.toFixed(2))
         } else {
             setTotal(defaultPrice)
         }
-    }, [lottoStore.gamesStatus, lottoStore._selectedTab])
+    }, [lottoStore.gamesStatus, lottoStore._selectedTab,defaultPrice,lottoStore._games ])
 
     const handleClickPlayAll = () => {
     }

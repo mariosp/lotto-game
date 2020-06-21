@@ -16,8 +16,6 @@ const MainBoard = observer(() => {
         return lnumbers;
     }
 
-    console.log("RENDER")
-
     return (
         <div className="mainboard-wrapper">
             {renderNumberBtns()}

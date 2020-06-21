@@ -1,3 +1,4 @@
+export const NUMBERS_PER_BOARD_MIN = 1;
 export const NUMBERS_PER_BOARD = 49;
 export const SYSTEM_LABEL = "SYSTEM";
 export const DEFAULT_SYSTEM_NUMBER = 6;
@@ -10,6 +11,8 @@ export const MAX_SYSTEM_NUMBER = 9;
 export const BTN_SELECT_CLR = "CLR";
 export const BTN_SELECT_CLR_ALL = "CLR All";
 export const BTN_SELECT_PLAY_ALL = "PLAY All";
+export const BTN_RANDOM = "RANDOM";
+export const BTN_RANDOM_ALL = "RND All";
 
 //INFO MESSAGES
 export const INFO_NOT_TOUCHED = "Pick your numbers";
